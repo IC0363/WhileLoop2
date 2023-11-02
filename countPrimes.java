@@ -1,4 +1,8 @@
 public class countPrimes {
+    public static void main(String[] args) {
+        int primeCount = countPrime(24);
+        System.out.println("The number of prime numbers from 2 to 24 is: " + primeCount);
+    }
     public static int countPrime(int n) {
         int i = 2;
         int num = 0;
@@ -11,29 +15,26 @@ public class countPrimes {
         
         while (i <= n) {
             boolean isPrime = true;
-            int divisor = 2;
+            int e = 2;
 
-            while (divisor < i){
+            while (e < i){
                 
-                if (i % divisor == 0) {
+                if (i % n == 0) {
                     isPrime = false;
                     break;
                 }
-                divisor++;
+                e++;
             }
 
             if (isPrime) {
                 num++;
             }
-            i++;
+            e++;
         }
 
         return num;
     }
     
 
-    public static void main(String[] args) {
-        int primeCount = countPrime(24);
-        System.out.println("The number of prime numbers from 2 to 24 is: " + primeCount);
-    }
+    
 }
